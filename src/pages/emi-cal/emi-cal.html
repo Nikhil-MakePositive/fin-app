@@ -1,0 +1,55 @@
+<!--
+  Generated template for the EmiCalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>emiCal</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+	  <ion-icon item-start name="cash"></ion-icon>
+	  <ion-input type="text" placeholder="Amount" [(ngModel)]="amount" ></ion-input>
+  </ion-item>	
+  <ion-item>
+	  <ion-icon item-start name="link"></ion-icon>
+	  <ion-input type="text" placeholder="Interest rate" [(ngModel)]="interest"></ion-input>
+  </ion-item>
+  <ion-item>
+	  <ion-icon item-start name="clock"></ion-icon>
+	  <ion-input type="text" placeholder="Duration" [(ngModel)]="duration"></ion-input>
+	  <button class="fixed-width btn btn-secondary" [class.active]="selected === 1" ion-button item-end (click)="setRotate(1,1)">Months</button>
+	  <ion-icon item-end [ngClass]="{'rotate': clickedId === 1, 'rotate-rev': clickedId === 2 }" name="sync"></ion-icon>
+	  <button class="fixed-width btn btn-secondary" [class.active]="selected === 2" ion-button item-end (click)="setRotate(2,2)">Years</button>
+  </ion-item>
+  <ion-item no-lines>
+  	<div style="text-align: center;" (click)="calculate()">
+	  <button ion-button color="secondary"> 
+	      <ion-icon item-start class="larger" name="calculator"></ion-icon>
+	      Calculate
+	  </button>
+	</div>
+  </ion-item>
+  <ion-item>
+	  <ion-icon item-start name="stats"></ion-icon>
+	  <ion-label>{{finalAmnt}}</ion-label>
+	  <!-- <ion-input type="text" value="{{finalAmnt}}" disabled></ion-input> -->
+	  <!-- <h1>{{finalAmnt}}</h1> -->
+  </ion-item>
+  <div style="display: block" *ngIf="calClicked">
+    <canvas baseChart
+        [data]="doughnutChartData"
+        [labels]="doughnutChartLabels"
+        [chartType]="doughnutChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+</ion-content>

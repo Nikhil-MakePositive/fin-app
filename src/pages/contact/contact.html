@@ -1,17 +1,50 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
+    <ion-title text-center>
       Contact
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+<ion-content padding>
+  <h3>My info</h3>
+  <p>Provide us with your details and we can make it easier for you to report incidents of discrimination.</p>
+  <form [formGroup]="userInfo" (ngSubmit)="saveInfo()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Phone</ion-label>
+        <ion-input formControlName="phone"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Address</ion-label>
+        <ion-input formControlName="address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Post Code</ion-label>
+        <ion-input formControlName="postcode"></ion-input>
+      </ion-item>
+
+    </ion-list>
+  <h3>Current location</h3>
+  <p>We would like to use your current location to help us offer you the most relevant choices and options.</p>
+  <ion-item>
+    <ion-label>Use my location</ion-label>
+    <ion-toggle formControlName="geolocation" (ionChange)="accessGeo()"></ion-toggle>
+  </ion-item>
+  <h3>Privacy</h3>
+  <p>Click here to remain anonymous to authorities and clubs. To keep you informed throughout the complaint process, your email address is always shared with Kick It Out only.</p>
+  <ion-item>
+    <ion-label>Remain anonymous</ion-label>
+    <ion-toggle color="primary" formControlName="isAnonymous" checked="false"></ion-toggle>
+  </ion-item>
+  <button ion-button block color="kio" style="margin-top: 30px;" [disabled]="!userInfo.valid">Save changes</button>
+  </form>
 </ion-content>

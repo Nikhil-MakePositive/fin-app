@@ -1,4 +1,4 @@
-// http://ionicframework.com/docs/theming/
+// http://ionicframework.com/docs/v2/theming/
 
 
 // App Global Sass
@@ -14,3 +14,286 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@font-face {
+  font-family: 'bebas_neueregular';
+  src: url('../assets/fonts/bebasneue-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/bebasneue-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/bebasneue-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/fonts/bebasneue-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/bebasneue-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+
+@mixin linear-gradient($direction, $color-stops...) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+.content{
+  background: #222222;
+}
+
+.toolbar-background{
+  @include linear-gradient(#373737 40%, #000000);
+}
+
+.toolbar-title{
+  color: #FFF;
+  font-family: 'bebas_neueregular', sans-serif;
+  font-size: 2.3rem;
+}
+h3,h4{
+  font-family: 'bebas_neueregular', sans-serif;
+  color: #ffdd00;
+}
+.alert-title{
+  color:black;
+}
+.alert-sub-title{
+  color:rgba(0, 0, 0, 0.5);
+}
+
+.yellowtext {
+  font-family: 'bebas_neueregular', sans-serif;
+  font-size: 1.375em;
+  color: #ffdd00;
+  margin-top: 4px;
+  margin-bottom: 0px;
+  padding-left: 1px;
+  text-align: left;
+}
+
+
+.tabs .tabbar{
+  @include linear-gradient(#373737 40%, #000000);
+}
+.button-md-kio,
+.button-ios-kio{
+  @include linear-gradient(#31a634 40%, #018d37);
+  color: #222222;
+  font-size: 2.5rem;
+  font-weight: 700;
+  height: 5.4rem;
+  font-family: 'bebas_neueregular', sans-serif;
+  letter-spacing: 0.3px;
+}
+.back-button{
+  color: #FFF;
+}
+.tabs-md .tab-button,
+.tabs-md .tab-button-icon{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+.tabs-md .tab-button[aria-selected=true],
+.tabs-ios .tab-button[aria-selected=true] {
+ opacity: 1;
+}
+.tabs-ios .tab-button[aria-selected=true] .tab-button-icon,
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon{
+  color: #48bc59;
+}
+.item-md,
+.item-ios{
+  background: transparent;
+}
+
+.content-md{
+  color:#F0F0F0;
+}
+
+h2{
+  color:white;
+}
+
+.platform-ios .content{
+  background: #222222;
+}
+
+.platform-ios .toolbar-background{
+  @include linear-gradient(#373737 40%, #000000);
+}
+
+.platform-ios .toolbar-title{
+  color: #FFF;
+  font-family: 'bebas_neueregular', sans-serif;
+  font-size: 2.3rem;
+}
+.platform-ios h3,h4{
+  font-family: 'bebas_neueregular', sans-serif;
+  color: #ffdd00;
+}
+.platform-ios .alert-title{
+  color:black;
+}
+.platform-ios .alert-sub-title{
+  color:rgba(0, 0, 0, 0.5);
+}
+
+.platform-ios .yellowtext {
+  font-family: 'bebas_neueregular', sans-serif;
+  font-size: 1.375em;
+  color:rgba(0, 0, 0, 0.5);
+  margin-top: 4px;
+  margin-bottom: 0px;
+  padding-left: 1px;
+  text-align: left;
+}
+
+.platform-ios .tabbar{
+  @include linear-gradient(#373737 40%, #000000);
+}
+
+.platform-ios .button-md-kio,
+.platform-ios .button-ios-kio{
+  @include linear-gradient(#31a634 40%, #018d37);
+  color: #222222;
+  font-size: 2.5rem;
+  font-weight: 700;
+  height: 5.4rem;
+  font-family: 'bebas_neueregular', sans-serif;
+  letter-spacing: 0.7px;
+}
+
+.platform-ios .back-button{
+  color: #FFF;
+}
+
+.platform-ios .tab-button,
+.platform-ios .tab-button-icon{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.platform-ios ion-title{
+  color: #193cab;
+  font-size: .5rem;
+  font-weight: 100;
+  height: .4rem;
+  font-family: 'bebas_neueregular', sans-serif;
+  letter-spacing: 0.7px;
+}
+
+.platform-ios ion-label , p{
+  color:#ffffff;
+}
+
+.platform-ios .tab-button[aria-selected=true],
+.platform-ios .tab-button[aria-selected=true] {
+ opacity: 1;
+}
+.platform-ios .tab-button-icon,
+.platform-ios .tab-button-icon{
+  color: #48bc59;
+}
+.platform-ios .item-md,
+.platform-ios .item-ios{
+  background: transparent;
+}
+
+.platform-ios .label-md,
+.platform-ios .label-md h2,
+.platform-ios .label-md b,
+.platform-ios .label-md p,
+.platform-ios h2,
+.platform-ios b,
+.platform-ios {
+  width:100%;
+}
+
+.platform-ios .content-md{
+  color:#F0F0F0;
+}
+
+.platform-ios h2{
+  color:white;
+}
+
+.platform-ios strong{
+  color: #FFF;
+  font-weight: bold;  
+}
+
+.platform-ios textarea{
+  height: 20vw;
+  color:white;
+}
+
+.platform-ios  ion-label{
+  white-space: normal;
+}
+.platform-ios  table td{
+  padding: 5px;
+  position: relative;
+}
+.platform-ios  table td span{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 21px;
+  font-weight: bold;
+  z-index: 10;
+  text-shadow: 1px solid #000;
+}
+
+.platform-ios .toolbar-title-ios {
+   display: block;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: pre-line;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0 0px;
+}
+
+.platform-ios  table td img{
+  position: relative;
+}
+
+.platform-ios h3{
+  color: #ffdd00;
+}
+
+.platform-ios .label-md-primary,
+.platform-ios .label-ios-primary{
+  color: #FFF;
+  font-weight: bold;
+}
+
+.platform-ios  .deleteIcon {
+  position: absolute !important;
+  color: #84162c !important;
+  margin-left: 80% !important;
+  transform: rotate(45deg);
+}
+
+.platform-ios .deleteIcon:before {
+  font-size: 30px !important;
+}
+
+.platform-ios .relative {
+  position: relative
+}
+  
+.platform-ios ion-row {
+  width:100%;
+  height:auto;
+}
+
+.platform-ios .item-inner{
+  color:white;
+}
+
+.platform-ios ion-label {
+  color:#9e9c9c;
+}
+
+.platform-ios input[type="text"],input[type="phone"],input[type="email"]{
+  color:white;
+}

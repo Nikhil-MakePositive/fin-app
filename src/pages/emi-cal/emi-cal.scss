@@ -1,0 +1,61 @@
+page-emi-cal {
+	.larger { 
+	font-size: 30px; 
+	color: #112299;
+	padding: 3px;
+	margin: 8px;
+	//Preferred size here 
+	}
+
+	.active {
+		color:red;
+	}
+
+	.fixed-width {
+		width: 52px;
+	}
+
+	.rotate {
+		// -ms-transform: rotate(20deg); /* IE 9 */
+  //   -webkit-transform: rotate(20deg); /* Safari */
+  //   transform: rotate(0deg);
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: rot;
+    animation-duration: 1s;
+    // animation-fill-mode: forwards ;
+	}
+
+	@-webkit-keyframes rot {
+     from {transform: rotate(0deg);}
+     to {transform: rotate(-180deg);}
+    }
+
+/* Standard syntax */
+   @keyframes rot {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(-180deg);}
+   }
+
+   .rotate-rev {
+		// -ms-transform: rotate(20deg); /* IE 9 */
+  //   -webkit-transform: rotate(20deg); /* Safari */
+  //   transform: rotate(0deg);
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: revRot;
+    animation-duration: 1s;
+    // animation-fill-mode: forwards ;
+	}
+
+	@-webkit-keyframes revRot {
+     from {transform: rotate(0deg);}
+     to {transform: rotate(180deg);}
+    }
+
+/* Standard syntax */
+   @keyframes revRot {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(180deg);}
+   }
+}
