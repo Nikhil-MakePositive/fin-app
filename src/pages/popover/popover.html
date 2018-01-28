@@ -13,11 +13,12 @@
 </ion-header> -->
 
 
-<ion-content padding>
+<ion-content>
 	<ion-list>
       <!-- <ion-list-header>Options</ion-list-header> -->
-      <button ion-item no-lines (click)="close()">Add Product</button>
-      <button ion-item no-lines (click)="close()">Edit Product</button>
-      <button ion-item no-lines (click)="close()">Remove Product</button>
+      <button ion-item no-lines (click)="navForm(1)"><ion-icon name="add" class="space"></ion-icon>Add Product</button>
+      <button ion-item no-lines (click)="navForm(2)"><ion-icon name="build" class="space"></ion-icon>Edit Product</button>
+      <button ion-item no-lines (click)="navForm(3)"><ion-icon name="close-circle" class="space"></ion-icon>Remove Product</button>
+      <p (click)="close()" style="text-decoration: underline;">Close</p>
     </ion-list>
 </ion-content>
