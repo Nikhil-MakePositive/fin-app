@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { AlertController, LoadingController, Loading} from 'ionic-angular';
 
 import { InsuranceProductsProvider } from '../../providers/insurance-products/insurance-products';
+import { ItemDetailPage } from '../item-detail/item-detail';
 
 /**
  * Generated class for the DeleteItemPage page.
@@ -25,12 +27,19 @@ export class DeleteItemPage {
   itemName: string;
   itemAmount: number;
   itemDuration: number;
+  loading: Loading;
 
   constructor(public navCtrl: NavController, 
   			  public navParams: NavParams,
   			  public formBuilder: FormBuilder,
-  			  public insProdProv: InsuranceProductsProvider) {
-  	this.initForm();
+  			  public insProdProv: InsuranceProductsProvider,
+  			  public alertCtrl: AlertController,
+  			  public loadingCtrl: LoadingController) 
+  {
+  			  this.initForm();
+  			  this.loading = this.loadingCtrl.create({
+		      content: "Please wait..."
+		    });
   }
 
   ionViewDidLoad() {
@@ -63,6 +72,43 @@ export class DeleteItemPage {
     		this.selectedItem = data;
     	})
     }
+  }
+
+  logForm() {
+  	let confirm = this.alertCtrl.create({
+      title: 'Delete this item?',
+      message: 'Are you sure you want to delete this Item?This can\'t be undone',
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Agree',
+          handler: () => {
+            console.log('Agree clicked');
+		    this.loading.present();
+		    setTimeout(() => {
+	          this.loading.dismiss();
+	          let alert = this.alertCtrl.create({
+			      title: 'Success!',
+			      subTitle: 'Item was deleted successfully!',
+			      buttons: [{
+			      	text: 'OK',
+			        handler: ()=> {
+			          this.navCtrl.push(ItemDetailPage);
+			        }
+			      }]
+			    });
+			    alert.present();
+	        }, 2000);
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 
 }

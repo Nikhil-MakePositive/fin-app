@@ -19,20 +19,36 @@
   <form [formGroup]="itemInfo" (ngSubmit)="saveInfo()">
     <ion-list>
       <ion-item>
-        <ion-label floating>Name</ion-label>
-        <ion-input formControlName="name"></ion-input>
+        <ion-label floating>Company Name</ion-label>
+        <ion-input formControlName="company_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Product Name</ion-label>
+        <ion-input formControlName="product_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Premium Due Date</ion-label>
+        <ion-input formControlName="premium_due_date"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Installment</ion-label>
-        <ion-input formControlName="amount"></ion-input>
+        <ion-input formControlName="premium_amount"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label floating>Email</ion-label>
-        <ion-input formControlName="email"></ion-input>
+        <ion-label floating>Policy no</ion-label>
+        <ion-input formControlName="policy_no"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label floating>Duration</ion-label>
-        <ion-input formControlName="duration"></ion-input>
+        <ion-label floating>Payment Schedule</ion-label>
+        <ion-input formControlName="payment_schedule"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>First premium date</ion-label>
+        <ion-input formControlName="first_premium_date"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Last premium date</ion-label>
+        <ion-input formControlName="last_premium_date"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Nominee</ion-label>

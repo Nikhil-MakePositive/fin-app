@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 
 import { InsuranceFormPage } from '../insurance-form/insurance-form';
 import { DeleteItemPage } from '../delete-item/delete-item';
+import { EditInsuranceFormPage } from '../edit-insurance-form/edit-insurance-form';
 /**
  * Generated class for the PopoverPage page.
  *
@@ -33,6 +34,8 @@ export class PopoverPage {
   navForm(id:number){
   	if(id === 1){
   		this.navCtrl.push(InsuranceFormPage);
+  	}else if(id === 2){
+  		this.navCtrl.push(EditInsuranceFormPage);
   	}else if(id === 3){
   		this.navCtrl.push(DeleteItemPage);
   	}

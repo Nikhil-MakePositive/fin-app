@@ -39,11 +39,11 @@
   </ion-item>
   <ion-item>
 	  <ion-icon item-start name="stats"></ion-icon>
-	  <ion-label>{{finalAmnt}}</ion-label>
+	  <ion-label>{{emiAmnt | number:'1.2-2' }}</ion-label>
 	  <!-- <ion-input type="text" value="{{finalAmnt}}" disabled></ion-input> -->
 	  <!-- <h1>{{finalAmnt}}</h1> -->
   </ion-item>
-  <div style="display: block" *ngIf="calClicked">
+  <!-- <div style="display: block" *ngIf="calClicked">
     <canvas baseChart
         [data]="doughnutChartData"
         [labels]="doughnutChartLabels"
@@ -51,5 +51,43 @@
         (chartHover)="chartHovered($event)"
         (chartClick)="chartClicked($event)">
     </canvas>
+  </div> -->
+  <ion-grid>
+  	<div *ngIf="doCalculate">  	
+  	<ion-row>
+  		<ion-col>
+	      <strong>SN.</strong>
+	    </ion-col>
+  		<ion-col>
+	      <strong>EMI</strong>
+	    </ion-col>
+  		<ion-col>
+	      <strong>Interest</strong>
+	    </ion-col>
+	    <ion-col>
+	      <strong>Principle</strong>
+	    </ion-col>
+	    <ion-col>
+	      <strong>Balance</strong>
+	    </ion-col>
+  	</ion-row>
+  	<ion-row *ngFor="let monthly of breakup; let i = index">
+  		<ion-col>
+  			{{ i+1 }}
+  		</ion-col>
+  		<ion-col>
+  			{{ emiAmnt | number:'1.2-2' }}
+  		</ion-col>
+  		<ion-col>
+  			{{ monthly.mInterest | number:'1.2-2' }}
+  		</ion-col>
+  		<ion-col>
+  			{{ monthly.p | number:'1.2-2' }}
+  		</ion-col>
+  		<ion-col>
+  			{{ monthly.bal | number:'1.2-2' }}
+  		</ion-col>
+  	</ion-row>	
   </div>
+  </ion-grid>
 </ion-content>

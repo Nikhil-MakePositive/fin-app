@@ -23,7 +23,7 @@ export class InsuranceProductsProvider {
 	  			  { amount: '3150', date: '10/04/2018', status: 'Not Complete'}]
   			    };
   public product2:any = {
-  				name: 'P1', policyAmount: 50000000, duration: 2,
+  				name: 'P1', policyAmount: 50000000, duration: 20,
   				val: [{ amount: '12580', date: '10/01/2018', status: 'Completed'},
 	  			  { amount: '12580', date: '10/02/2018', status: 'Completed'},
 	  			  { amount: '12580', date: '10/03/2018', status: 'Not Complete'},
@@ -34,12 +34,13 @@ export class InsuranceProductsProvider {
  	let p1 = this.product1,
  	    p2 = this.product2;
 
- 	return new Promise(resolve => {
+ 	return new Promise((resolve, reject) => {
 	 	if(id === 1){
 	 		resolve(p1);
 	 	}else if(id === 2){
 	 		resolve(p2);
 	 	}
+	 	reject('Not a valid option');
     });
  }	
 
@@ -47,12 +48,13 @@ export class InsuranceProductsProvider {
  	let p1 = this.product1,
  	    p2 = this.product2;
 
- 	return new Promise(resolve => {
+ 	return new Promise((resolve, reject) => {
 	 	if(id === 1){
 	 		resolve(p1.val);
 	 	}else if(id === 2){
 	 		resolve(p2.val);
 	 	}
+	 	reject('Not a valid option');
     });
  }  			
 

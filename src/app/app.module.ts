@@ -19,6 +19,7 @@ import { EmiCalPage } from '../pages/emi-cal/emi-cal';
 import { PopoverPage } from '../pages/popover/popover';
 import { InsuranceFormPage } from '../pages/insurance-form/insurance-form';
 import { DeleteItemPage } from '../pages/delete-item/delete-item';
+import { EditInsuranceFormPage } from '../pages/edit-insurance-form/edit-insurance-form';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,6 +38,7 @@ import { InsuranceProductsProvider } from '../providers/insurance-products/insur
     PopoverPage,
     InsuranceFormPage,
     DeleteItemPage,
+    EditInsuranceFormPage,
     TabsPage
   ],
   imports: [
@@ -58,6 +60,7 @@ import { InsuranceProductsProvider } from '../providers/insurance-products/insur
     PopoverPage,
     InsuranceFormPage,
     DeleteItemPage,
+    EditInsuranceFormPage,
     TabsPage
   ],
   providers: [
